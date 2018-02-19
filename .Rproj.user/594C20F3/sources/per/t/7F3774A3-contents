@@ -1,0 +1,25 @@
+languageCode = "en-US"
+layoutdir = "layouts"
+baseurl = "/"
+googleAnalytics = ""
+theme = "hugo-vitae"
+publishDir = "demirev.github.io"
+
+[params]
+  author = "Georgi Demirev"
+  title = "Georgi Demirev's Resume"
+  description = "Georgi Demirev's Resume"
+  avatar = "profile.png"
+  email = "demirev15@gmail.com"
+  email_full = "mailto:demirev15@gmail.com"
+  twitter = "Georgi_Demirev"
+  linkedin = "gdemirev"
+  website = "datakubism.com"
+  google_maps = "https://www.google.bg/maps/search/zh.k.+Yavorov+/@42.6831665,23.3504484,18.79z"
+  address = "Av Gaudi 27"
+  postcode = "1111"
+  city = "Barcelona"
+  country = "Spain"
+
+  # Custom assets can be linked with their paths relative to static/
+  custom_css = []
