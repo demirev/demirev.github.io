@@ -1,14 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title></title>
-    <link>/</link>
-    <description>Recent content on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>demirev.github.io</title>
+        <link>https://demirev.github.io/</link>
+        <description>georgi demirev&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Jan 2021 00:00:00 &#43;0000</lastBuildDate>
+            <atom:link href="https://demirev.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Социалните мрежи и политическата поляризация</title>
+    <link>https://demirev.github.io/2021-01-12-social-media-and-polarization/</link>
+    <pubDate>Sat, 16 Jan 2021 00:00:00 &#43;0000</pubDate>
+    <author>upagge.en</author>
+    <guid>https://demirev.github.io/2021-01-12-social-media-and-polarization/</guid>
+    <description><![CDATA[Гледайки събитията от САЩ, си мисля доста за влиянието на социалните мрежи върху гражданското общество и политическия диалог. Като цяло заключенията ми са доста мрачни.
+Note  TLDR: Начинът, по който говорим за политика във фейсбук и туитър ни тласка към все повече поляризация и конфликти. Причините са няколко и са директен резултат от дизайна и фичърите на платформи от този тип:     Трибуна за най-противоречивите мнения. Знаем, че публикациите, които будят силни емоции и най-вече гняв, са тези, които се споделят най-много и събират най-много реакции.]]></description>
+</item><item>
+    <title>Social Distancing and Behavioural Fatigue</title>
+    <link>https://demirev.github.io/2020-03-16-social-distancing-and-behavioiral-fatigue/</link>
+    <pubDate>Mon, 16 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>upagge.en</author>
+    <guid>https://demirev.github.io/2020-03-16-social-distancing-and-behavioiral-fatigue/</guid>
+    <description><![CDATA[Note  Big Disclaimer: I am not an epidemiologist or in any other way qualified to make judgments on effective disease prevention and containment. This post is just a layman’s attempt to understand the actions and choices of some of the world’s governments and should not be taken as advice or expert opinion.   How do you contain a pandemic? The rapid spread of the ongoing coronavirus pandemic has caught governments and health authorities around the world off-guard.]]></description>
+</item></channel>
 </rss>
