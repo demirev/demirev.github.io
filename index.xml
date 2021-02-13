@@ -14,6 +14,29 @@
     <description><![CDATA[Гледайки събитията от САЩ, си мисля доста за влиянието на социалните мрежи върху гражданското общество и политическия диалог. Като цяло заключенията ми са доста мрачни.
 Note  TLDR: Начинът, по който говорим за политика във фейсбук и туитър ни тласка към все повече поляризация и конфликти. Причините са няколко и са директен резултат от дизайна и фичърите на платформи от този тип:     Трибуна за най-противоречивите мнения. Знаем, че публикациите, които будят силни емоции и най-вече гняв, са тези, които се споделят най-много и събират най-много реакции.]]></description>
 </item><item>
+    <title>Playing Around with Epi Models - Part 2</title>
+    <link>https://demirev.github.io/2020-05-10-agent-based-pandemic-model/</link>
+    <pubDate>Sun, 10 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>upagge.en</author>
+    <guid>https://demirev.github.io/2020-05-10-agent-based-pandemic-model/</guid>
+    <description><![CDATA[As a follow up to my last couple of posts, this is a detailed description of the agent based pandemic model I built on top of work by Adam Kucharski et al. as a self-learning exercise.
+Note  Code for this project can be found at https://github.com/demirev/2020-cov-abm   Model Description - Agent-Based Pandemic Model The model simulates a population of agents divided in households and workplaces who interact (and expose each other to the disease) on a daily basis.]]></description>
+</item><item>
+    <title>Playing Around with Epi Models - Part 1</title>
+    <link>https://demirev.github.io/2020-04-16-age-specific-seir-model/</link>
+    <pubDate>Thu, 16 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>upagge.en</author>
+    <guid>https://demirev.github.io/2020-04-16-age-specific-seir-model/</guid>
+    <description><![CDATA[As a follow up to my last post, this is a detailed description of the SEIR model I built on top of work by Alsion Hill as a self-learning exercise.
+Note  Code for this project can be found here, while an interactive dashboard is available here.   Model Description - Age-specific SEIR Model Individuals in this model are split up into $A$ age groups and 9 classes. All individuals start in the susceptible ($S$) class.]]></description>
+</item><item>
+    <title>Playing Around with Epi Models - Part 0</title>
+    <link>https://demirev.github.io/2020-04-12-playing-around-with-epi-models/</link>
+    <pubDate>Sun, 12 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>upagge.en</author>
+    <guid>https://demirev.github.io/2020-04-12-playing-around-with-epi-models/</guid>
+    <description><![CDATA[Learning about epidemiology Like most of you I knew next to nothing about epidemiology until a month ago. And also like most of you I am suddenly stuck at home with a lot of free time at my hands. And since it seems that in the next few months epidemiology will play a huge role in informing decision that can impact many thousands of lives, I decided that it may be a good idea to study the subject a bit in order to be able to have better informed opinions.]]></description>
+</item><item>
     <title>Social Distancing and Behavioural Fatigue</title>
     <link>https://demirev.github.io/2020-03-16-social-distancing-and-behavioiral-fatigue/</link>
     <pubDate>Mon, 16 Mar 2020 00:00:00 &#43;0000</pubDate>
