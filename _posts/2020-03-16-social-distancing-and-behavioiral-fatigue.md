@@ -3,20 +3,16 @@ title: 'Social Distancing and Behavioural Fatigue'
 date: 2020-03-16
 permalink: /posts/behavioural-fatigue/
 tags:
-  - modeles
+  - models
 ---
-
-
-# Social Distancing and Behavioural Fatigue
-
-
-{{< admonition >}}
-Big Disclaimer: I am not an epidemiologist or in any other way qualified to make judgments on effective disease prevention and containment. This post is just a layman’s attempt to understand the actions and choices of some of the world’s governments and should not be taken as advice or expert opinion.
-{{< /admonition >}}
 
 ## How do you contain a pandemic?
 
 The rapid spread of the ongoing coronavirus pandemic has caught governments and health authorities around the world off-guard. As various emergency [emergency measures](https://www.bbc.com/news/world-europe-51810673) are placed in hold, it is becoming evident that different countries are choosing [different strategies](https://www.bbc.com/news/world-51737226) to contain the disease.
+
+{{< admonition >}}
+Big Disclaimer: I am not an epidemiologist or in any other way qualified to make judgments on effective disease prevention and containment. This post is just a layman’s attempt to understand the actions and choices of some of the world’s governments and should not be taken as advice or expert opinion.
+{{< /admonition >}}
 
 The goal of pretty much all of these strategies at this point is social distancing - the reduction in frequency of contact between members of society so as to slow down the spread of the virus. However, there are stark difference in the severity and the timing of measures adopted by different governments.
 

@@ -6,9 +6,6 @@ tags:
   - models
 ---
 
-# Playing Around with Epi Models - Part 2
-
-
 As a follow up to my last couple of posts, this is a detailed description of the agent based pandemic model I built on top of [work](https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30457-6/fulltext) by Adam Kucharski et al. as a self-learning exercise.
 
 {{< admonition >}}

@@ -6,9 +6,6 @@ tags:
   - models
 ---
 
-# Playing Around with Epi Models - Part 0
-
-
 ## Learning about epidemiology
 
 Like most of you I knew next to nothing about epidemiology until a month ago. And also like most of you I am suddenly stuck at home with a lot of free time at my hands. And since it seems that in the next few months epidemiology will play a huge role in informing decision that can impact many thousands of lives, I decided that it may be a good idea to study the subject a bit in order to be able to have better informed opinions.

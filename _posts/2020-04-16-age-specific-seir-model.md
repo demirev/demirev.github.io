@@ -6,11 +6,9 @@ tags:
   - models
 ---
 
-# Playing Around with Epi Models - Part 1
+As a follow up to my last post, this is a detailed description of the SEIR model I built on top of [work](https://alhill.shinyapps.io/COVID19seir/) by Alsion Hill as a self-learning exercise.
 
 ![]({{ '/images/posts/epi1-featured-image.png' | relative_url }})
-
-As a follow up to my last post, this is a detailed description of the SEIR model I built on top of [work](https://alhill.shinyapps.io/COVID19seir/) by Alsion Hill as a self-learning exercise.
 
 {{< admonition >}}
 Code for this project can be found [here](https://github.com/demirev/SEIR_COVID19), while an interactive dashboard is available [here](https://demirev.shinyapps.io/SIRinterventions/).
