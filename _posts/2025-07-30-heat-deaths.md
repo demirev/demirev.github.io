@@ -207,7 +207,7 @@ where $Y_i$ is deaths for a given week-gender-age-region group. $\mu_i$ in turn 
 log{\mu_i}=log\{N_i} + f(t_i) + controls
 \end{equation}
 
-$N_i$ is the population, and $f()$ is a spline function. The death rate is thus:
+$`N_i`$ is the population, and $f()$ is a spline function. The death rate is thus:
 
 \begin{equation}
 \lambda_i = \frac{\mu_i}{N_i} = exp\left[f(t_i)+controls\right]
