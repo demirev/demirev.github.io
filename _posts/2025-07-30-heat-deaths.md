@@ -1,7 +1,7 @@
 ---
 title: 'Heat Waves'
 date: 2025-07-30
-permalink: /posts/epi-models-2/
+permalink: /posts/heat-waves/
 tags:
   - models
 ---
