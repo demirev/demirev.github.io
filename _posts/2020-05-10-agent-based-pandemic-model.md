@@ -1,6 +1,6 @@
 ---
 title: 'Playing Around with Epi Models - Part 2'
-date: 2020-05-10
+date: 2025-07-30
 permalink: /posts/heat-waves/
 tags:
   - models
