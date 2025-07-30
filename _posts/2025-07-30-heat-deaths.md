@@ -210,7 +210,7 @@ log{\mu_i}=log\{N_i} + f(t_i) + controls
 $N_i$ is the population, and $f()$ is a spline function. The death rate is thus:
 
 \begin{equation}
-\lambda_i = \fra{\mu_i}{N_i} = exp\left[f(t_i)+controls\right]
+\lambda_i = \frac{\mu_i}{N_i} = exp\left[f(t_i)+controls\right]
 \end{equation}
 
 Therefore the exponent of any coefficient (or a given value of the spline function $f()$) from the model below should be interpreted as a **relative multiplicative** change in death rates, holding all controls fixed.
