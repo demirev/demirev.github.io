@@ -130,6 +130,7 @@ function populateVariableSelect() {
     { value: "eligible", label: "Eligible voters" },
     { value: "voted", label: "Total voters" },
     { value: "valid", label: "Valid votes" },
+    { value: "density", label: "Voter density (per km²)" },
   ];
   // Add per-party share options, ordered by total votes.
   for (const pno of state.partyRank) {
@@ -338,6 +339,8 @@ function showDetail(feature) {
     ["Valid votes", `${fmtInt(r.valid)} (${fmtPct(r.voted ? r.valid / r.voted : 0)})`],
     ["Invalid ballots", `${fmtInt(r.invalid)} (${fmtPct(r.invalid_share)})`],
     ['"No one"', `${fmtInt(r.no_one)} (${fmtPct(r.no_one_share)})`],
+    ["Area", r.area_km2 ? `${r.area_km2.toFixed(r.area_km2 < 0.1 ? 3 : 2)} km²` : "—"],
+    ["Voter density", r.density != null ? `${fmtInt(r.density)} / km²` : "—"],
   ];
   for (const [k, v] of rows) {
     const dt = document.createElement("dt"); dt.textContent = k;
