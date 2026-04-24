@@ -221,21 +221,42 @@ function numericValue(results, variable) {
   return results[variable];
 }
 
-// Cache of min/max per (electionId, variable) since restyle runs per-feature.
-let _rangeCache = { key: null, min: 0, max: 1 };
+// Cache of range per (electionId, variable) since restyle runs per-feature.
+// Bounds use the 1st and 99th percentiles so a single outlier (e.g. a CIK
+// protocol typo with 97k "eligible" voters) doesn't collapse the gradient.
+// Values outside [min, max] get visually clamped; the legend flags the clip
+// with "≤" / "+" markers.
+let _rangeCache = { key: null, min: 0, max: 1, clipMin: false, clipMax: false };
 function numericRange() {
   const key = `${state.electionId}|${state.variable}`;
   if (_rangeCache.key === key) return _rangeCache;
-  let min = Infinity, max = -Infinity;
+  const values = [];
   for (const f of state.geojson.features) {
     const v = numericValue(f.properties.results || {}, state.variable);
     if (v == null || !isFinite(v)) continue;
-    if (v < min) min = v;
-    if (v > max) max = v;
+    values.push(v);
   }
-  if (!isFinite(min) || !isFinite(max) || min === max) { min = 0; max = max > 0 ? max : 1; }
-  _rangeCache = { key, min, max };
+  if (!values.length) {
+    _rangeCache = { key, min: 0, max: 1, clipMin: false, clipMax: false };
+    return _rangeCache;
+  }
+  values.sort((a, b) => a - b);
+  const rawMin = values[0];
+  const rawMax = values[values.length - 1];
+  let min = percentile(values, 0.01);
+  let max = percentile(values, 0.99);
+  if (min === max) { min = rawMin; max = rawMax; }
+  if (min === max) { min = 0; max = max > 0 ? max : 1; }
+  _rangeCache = { key, min, max, clipMin: rawMin < min, clipMax: rawMax > max };
   return _rangeCache;
+}
+
+function percentile(sorted, p) {
+  const idx = (sorted.length - 1) * p;
+  const lo = Math.floor(idx);
+  const hi = Math.ceil(idx);
+  if (lo === hi) return sorted[lo];
+  return sorted[lo] + (sorted[hi] - sorted[lo]) * (idx - lo);
 }
 
 function sequentialColor(v, min, max) {
@@ -289,7 +310,7 @@ function renderLegend() {
     }
     return;
   }
-  const { min, max } = numericRange();
+  const { min, max, clipMin, clipMax } = numericRange();
   const gradient = document.createElement("div");
   gradient.className = "legend-gradient";
   gradient.style.setProperty("--grad-from", SEQ_FROM);
@@ -297,7 +318,9 @@ function renderLegend() {
   el.appendChild(gradient);
   const scale = document.createElement("div");
   scale.className = "legend-scale";
-  scale.innerHTML = `<span>${formatValue(min, state.variable)}</span><span>${formatValue(max, state.variable)}</span>`;
+  const minLabel = (clipMin ? "≤ " : "") + formatValue(min, state.variable);
+  const maxLabel = formatValue(max, state.variable) + (clipMax ? " +" : "");
+  scale.innerHTML = `<span>${minLabel}</span><span>${maxLabel}</span>`;
   el.appendChild(scale);
 }
 
