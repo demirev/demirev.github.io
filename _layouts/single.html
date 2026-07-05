@@ -47,30 +47,20 @@ layout: default
       <section class="page__content" itemprop="text">
         {{ content }}
 
-        {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.paperurl and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation and page.paperurl and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a></p>
-        {% elsif page.citation and page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.paperurl and page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation %}
+        {% if page.citation %}
           <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
-        {% elsif page.slidesurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+        {% endif %}
+
+        {% assign pub_links = "" %}
+        {% if page.paperurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: page.paperurl | append: '">Paper</a>' %}{% endif %}
+        {% if page.preprinturl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: page.preprinturl | append: '">Preprint</a>' %}{% endif %}
+        {% if page.slidesurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: page.slidesurl | append: '">Slides</a>' %}{% endif %}
+        {% if page.codeurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: page.codeurl | append: '">Code</a>' %}{% endif %}
+        {% if page.dashboardurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: page.dashboardurl | append: '">Dashboard</a>' %}{% endif %}
+        {% if page.blogurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: page.blogurl | append: '">Blog</a>' %}{% endif %}
+        {% if page.bibtexurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: page.bibtexurl | append: '">Bibtex</a>' %}{% endif %}
+        {% if pub_links != "" %}
+          <p style="font-size: smaller">{{ pub_links | remove_first: " | " }}</p>
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}

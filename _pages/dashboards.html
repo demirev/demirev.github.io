@@ -1,0 +1,72 @@
+---
+layout: archive
+title: "Dashboards"
+permalink: /dashboards/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p>Interactive, self-contained dashboards that accompany my research and side projects.</p>
+
+<div class="dashboard-list">
+
+  <div class="dashboard-card">
+    <a class="dashboard-card__img" href="{{ base_path }}/ai-and-jobs/">
+      <img src="{{ base_path }}/images/dashboards/ai-and-jobs.png" alt="Screenshot of the AI &amp; Labor Demand dashboard" />
+    </a>
+    <div class="dashboard-card__body">
+      <h2><a href="{{ base_path }}/ai-and-jobs/">AI &amp; Labor Demand</a></h2>
+      <p>Interactive companion to my working paper <em>Generative AI and Job Displacement</em>. Explore the
+      headline estimates, event studies, the automation-vs-augmentation split, and every individual occupation
+      across five AI-exposure measures and two data sources (EU online job adverts and Australia's Internet
+      Vacancy Index).</p>
+      <p class="dashboard-card__link"><a href="{{ base_path }}/ai-and-jobs/">demirev.github.io/ai-and-jobs/</a></p>
+    </div>
+  </div>
+
+  <div class="dashboard-card">
+    <a class="dashboard-card__img" href="{{ base_path }}/sofia-votes/">
+      <img src="{{ base_path }}/images/dashboards/sofia-votes.png" alt="Screenshot of the Sofia Elections precinct map" />
+    </a>
+    <div class="dashboard-card__body">
+      <h2><a href="{{ base_path }}/sofia-votes/">Sofia Elections</a></h2>
+      <p>A precinct-level interactive map of recent election results across Sofia. Colour precincts by the
+      winning party or by support for any single party, and switch between elections to see how the political
+      map of the city shifts.</p>
+      <p class="dashboard-card__link"><a href="{{ base_path }}/sofia-votes/">demirev.github.io/sofia-votes/</a></p>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  .dashboard-list { margin-top: 1.5em; }
+  .dashboard-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    align-items: flex-start;
+    margin-bottom: 2.5em;
+    padding-bottom: 2.5em;
+    border-bottom: 1px solid #eee;
+  }
+  .dashboard-card:last-child { border-bottom: 0; }
+  .dashboard-card__img {
+    flex: 1 1 320px;
+    max-width: 460px;
+    display: block;
+  }
+  .dashboard-card__img img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s ease;
+  }
+  .dashboard-card__img:hover img { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18); }
+  .dashboard-card__body { flex: 2 1 300px; }
+  .dashboard-card__body h2 { margin-top: 0; }
+  .dashboard-card__link { font-size: 0.85em; }
+</style>

@@ -52,32 +52,20 @@
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
     
-    {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.paperurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl}}">Download Bibtex</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation %}
+    {% if post.citation %}
       <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl and post.bibtexurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.paperurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a></p>
-    {% elsif post.slidesurl and post.bibtexurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.bibtexurl %}
-      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% endif %}
+
+    {% assign pub_links = "" %}
+    {% if post.paperurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: post.paperurl | append: '">Paper</a>' %}{% endif %}
+    {% if post.preprinturl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: post.preprinturl | append: '">Preprint</a>' %}{% endif %}
+    {% if post.slidesurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: post.slidesurl | append: '">Slides</a>' %}{% endif %}
+    {% if post.codeurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: post.codeurl | append: '">Code</a>' %}{% endif %}
+    {% if post.dashboardurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: post.dashboardurl | append: '">Dashboard</a>' %}{% endif %}
+    {% if post.blogurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: post.blogurl | append: '">Blog</a>' %}{% endif %}
+    {% if post.bibtexurl %}{% assign pub_links = pub_links | append: ' | <a href="' | append: post.bibtexurl | append: '">Bibtex</a>' %}{% endif %}
+    {% if pub_links != "" %}
+      <p>{{ pub_links | remove_first: " | " }}</p>
     {% endif %}
 
   </article>
