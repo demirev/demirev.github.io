@@ -1,20 +1,22 @@
 ---
-title: "Generative AI and Job Displacement: Initial Evidence from EU Online Job Markets"
+title: "AI and the Composition of Labor Demand: Evidence from Online Job Postings"
 collection: publications
 category: manuscripts
 permalink: /publication/2026-07-01-generative-ai-job-displacement
-excerpt: 'Quantifies the early impact of large language models on labor demand in the European Union (2021&ndash;2024). Using a difference-in-differences design around ChatGPT&apos;s release and CEDEFOP&apos;s online job posting data, occupations with higher AI exposure saw a 13&ndash;18% larger drop in job postings relative to the least-exposed, and skills most similar to AI capabilities declined in mention frequency by about 10%.'
+excerpt: 'Examines where the post-2022 contraction in labor demand fell in relation to occupational AI exposure, using online job postings across the European Union from 2021 to 2025. Since the release of ChatGPT, postings for the most AI-exposed occupations have declined by 19&ndash;29% relative to the least exposed ones, or 4&ndash;7% per standard deviation of exposure.'
 date: 2026-07-01
 venue: 'Working Paper'
-preprinturl: 'https://github.com/demirev/llms-and-online-jobs/blob/main/working_paper.pdf'
+preprinturl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7054839'
 slidesurl: 'https://github.com/demirev/llms-and-online-jobs/blob/main/tex/slides.pdf'
 codeurl: 'https://github.com/demirev/llms-and-online-jobs'
 dashboardurl: 'https://demirev.github.io/ai-and-jobs/'
-citation: 'Demirev, G. (2026). &quot;Generative AI and Job Displacement: Initial Evidence from EU Online Job Markets.&quot; Working paper, Sofia University.'
+citation: 'Demirev, G. (2026). &quot;AI and the Composition of Labor Demand: Evidence from Online Job Postings.&quot; Working paper, SSRN 7054839.'
 ---
 
-**Working paper &mdash; work in progress, not yet peer reviewed.**
+**Working paper: not yet peer reviewed.**
 
-This paper quantifies the early impact of large language models (e.g., ChatGPT) on labor demand and productivity in the European Union over 2021&ndash;2024. I combine four occupational AI-exposure indices (Felten et al. 2018, Webb 2022, Eloundou et al. 2023, Demirev 2024) mapped to ESCO occupations with CEDEFOP's Skills OVATE dataset (100+ million online job postings) as a proxy for labor demand, and Eurostat industry-level productivity metrics. The empirical strategy is a difference-in-differences approach with continuous treatment, using ChatGPT's public release (November 2022) as the event date.
+This paper examines where the post-2022 contraction in labor demand fell in relation to occupational AI exposure, by analyzing online job postings across the European Union from 2021 to 2025. Since the release of ChatGPT, postings for the most AI-exposed occupations have declined by 19&ndash;29% relative to the least exposed ones, or 4&ndash;7% per standard deviation of exposure, with the gap widening each quarter. The pattern holds across five measures of occupational AI exposure, survives controls for interest rate sensitivity, the pre-ChatGPT hiring run-up and teleworkability, and is partially replicated in an out-of-sample test on Australian data.
 
-Occupations with higher AI exposure saw a 13&ndash;18% larger drop in job postings relative to the least-exposed, and skills most similar to AI capabilities declined in mention frequency by about 10%. There is so far no clear evidence of significant productivity gains at the industry level. An [interactive dashboard](https://demirev.github.io/ai-and-jobs/) accompanies the paper with headline estimates, event studies, and an occupation explorer.
+Within occupations, job skills that are most similar to AI capabilities are mentioned 12% less frequently in job descriptions, suggesting changes in task composition. Industry-level analysis shows no corresponding change in labor or capital productivity, consistent with "so-so automation". Finally, the association between AI exposure and posting growth follows an inverted U-shape in experience: it is most negative for entry-level postings and for those requiring over ten years of experience.
+
+An [interactive dashboard](https://demirev.github.io/ai-and-jobs/) accompanies the paper with headline estimates, event studies, the horse race against alternative explanations, and an occupation explorer.
