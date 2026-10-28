@@ -123,7 +123,7 @@ function populateVariableSelect() {
   const sel = document.getElementById("variable-select");
   sel.innerHTML = "";
   const options = [
-    { value: "winner", label: "Winning party" },
+    { value: "winner", label: "Winner" },
     { value: "turnout", label: "Turnout %" },
     { value: "invalid_share", label: "Invalid ballot %" },
     { value: "no_one_share", label: '"No one" vote %' },
@@ -381,7 +381,7 @@ document.getElementById("detail-close").addEventListener("click", closeDetail);
 
 function shortPartyName(name) {
   if (!name) return "";
-  const s = String(name).replace(/^(ПП|КП|ИК|БСП)\s+/u, "");
+  const s = String(name).replace(/^(ПП|КП|ИК|БСП)\s+/u, "").replace(/\s*\(.*\)$/u, "");
   return s.length > 34 ? s.slice(0, 32) + "…" : s;
 }
 

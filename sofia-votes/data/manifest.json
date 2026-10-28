@@ -1,6 +1,10 @@
 {
   "elections": [
     {
+      "id": "20261025-president",
+      "label": "25 October 2026 — President"
+    },
+    {
       "id": "20260419-parliament",
       "label": "19 April 2026 — Parliament"
     }
