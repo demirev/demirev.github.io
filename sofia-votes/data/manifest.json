@@ -7,6 +7,30 @@
     {
       "id": "20260419-parliament",
       "label": "19 April 2026 — Parliament"
+    },
+    {
+      "id": "20241027-parliament",
+      "label": "27 October 2024 — Parliament"
+    },
+    {
+      "id": "20240609-parliament",
+      "label": "9 June 2024 — Parliament"
+    },
+    {
+      "id": "20240609-european",
+      "label": "9 June 2024 — European Parliament"
+    },
+    {
+      "id": "20231105-local-mayor",
+      "label": "5 November 2023 — Mayor, runoff"
+    },
+    {
+      "id": "20231029-local-mayor",
+      "label": "29 October 2023 — Mayor, round 1"
+    },
+    {
+      "id": "20231029-local-council",
+      "label": "29 October 2023 — Municipal council"
     }
   ]
 }

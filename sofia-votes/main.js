@@ -1,5 +1,6 @@
 // Sofia Elections Map — static Leaflet app.
-// Loads data/manifest.json, then each election's precincts.geojson + parties.json.
+// Loads data/manifest.json and the shared data/precincts.geojson, then each
+// election's results.json + parties.json, joined onto the precincts by id.
 
 const MAP_CENTER = [42.6977, 23.3219]; // Sofia
 const MAP_ZOOM = 11;
@@ -40,7 +41,10 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 init();
 
 async function init() {
-  state.manifest = await fetchJSON("./data/manifest.json");
+  [state.manifest, state.geojson] = await Promise.all([
+    fetchJSON("./data/manifest.json"),
+    fetchJSON("./data/precincts.geojson"),
+  ]);
   populateElectionSelect();
   await loadElection(pickDefaultElectionId());
 }
@@ -70,9 +74,9 @@ function populateElectionSelect() {
 async function loadElection(electionId) {
   state.electionId = electionId;
   const base = `./data/${electionId}`;
-  const [partiesRaw, geojson] = await Promise.all([
+  const [partiesRaw, results] = await Promise.all([
     fetchJSON(`${base}/parties.json`),
-    fetchJSON(`${base}/precincts.geojson`),
+    fetchJSON(`${base}/results.json`),
   ]);
   state.parties = {};
   state.knownColors = {};
@@ -80,7 +84,9 @@ async function loadElection(electionId) {
     state.parties[num] = entry.name;
     state.knownColors[num] = entry.color || null;
   }
-  state.geojson = geojson;
+  for (const f of state.geojson.features) {
+    f.properties.results = results[f.properties.id] || null;
+  }
   assignPartyColors();
   populateVariableSelect();
   renderLayer();
@@ -132,6 +138,8 @@ function populateVariableSelect() {
     { value: "valid", label: "Valid votes" },
     { value: "density", label: "Voter density (per km²)" },
   ];
+  // Party numbers differ between elections.
+  if (state.variable.startsWith("party:")) state.variable = "winner";
   // Add per-party share options, ordered by total votes.
   for (const pno of state.partyRank) {
     options.push({
@@ -233,7 +241,8 @@ function numericRange() {
   if (_rangeCache.key === key) return _rangeCache;
   const values = [];
   for (const f of state.geojson.features) {
-    const v = numericValue(f.properties.results || {}, state.variable);
+    if (!f.properties.results) continue;
+    const v = numericValue(f.properties.results, state.variable);
     if (v == null || !isFinite(v)) continue;
     values.push(v);
   }
@@ -381,7 +390,7 @@ document.getElementById("detail-close").addEventListener("click", closeDetail);
 
 function shortPartyName(name) {
   if (!name) return "";
-  const s = String(name).replace(/^(ПП|КП|ИК|БСП)\s+/u, "").replace(/\s*\(.*\)$/u, "");
+  const s = String(name).replace(/^(ПП|КП|ИК)\s+/u, "").replace(/\s*\(.*\)$/u, "");
   return s.length > 34 ? s.slice(0, 32) + "…" : s;
 }
 
