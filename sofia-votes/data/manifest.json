@@ -1,6 +1,10 @@
 {
   "elections": [
     {
+      "id": "20261101-president-runoff",
+      "label": "1 November 2026 — President, runoff"
+    },
+    {
       "id": "20261025-president",
       "label": "25 October 2026 — President"
     },
